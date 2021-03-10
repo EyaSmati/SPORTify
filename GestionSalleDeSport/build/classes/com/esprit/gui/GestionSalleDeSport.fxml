@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.GestionSalleDeSportController">
+   <children>
+      <ImageView fitHeight="691.0" fitWidth="998.0" layoutX="-5.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/photo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="101.0" layoutY="113.0" text="Id_Salle" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="159.0" text="Nom_Salle" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="205.0" text="Adresse" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="250.0" text="Région" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfId_Salle" layoutX="242.0" layoutY="108.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfNom_Salle" layoutX="242.0" layoutY="154.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfAdresse" layoutX="242.0" layoutY="200.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfRegion" layoutX="242.0" layoutY="245.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btn_Ajouter" layoutX="385.0" layoutY="300.0" mnemonicParsing="false" onAction="#AjouterSalleDeSport" style="-fx-background-color: #04B0E5;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="572.0" layoutY="113.0" text="HeureDébut" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="572.0" layoutY="157.0" text="HeureFin" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="575.0" layoutY="205.0" text="Minutes" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="571.0" layoutY="251.0" text="NumTel" textFill="#fffafa">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfHdebut" layoutX="703.0" layoutY="108.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfHfin" layoutX="703.0" layoutY="152.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfMin" layoutX="703.0" layoutY="195.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfNumTel" layoutX="703.0" layoutY="246.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btn_Supprimer" layoutX="519.0" layoutY="300.0" mnemonicParsing="false" onAction="#SuppSalleDeSport" style="-fx-background-color: #04B0E5;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_Modifier" layoutX="667.0" layoutY="300.0" mnemonicParsing="false" onAction="#ModifierSalleDeSport" prefWidth="120.0" style="-fx-background-color: #04B0E5;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="ListeSalleDeSport" layoutX="56.0" layoutY="454.0" prefHeight="154.0" prefWidth="900.0" style="-fx-background-color: white;">
+         <columns>
+            <TableColumn fx:id="clId_Salle" prefWidth="87.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold; text fill color: white;" text="Id_Salle" />
+            <TableColumn fx:id="clNom_Salle" prefWidth="116.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold;" text="Nom_Salle" />
+            <TableColumn fx:id="cl_Adresse" prefWidth="116.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold;" text="Adresse" />
+            <TableColumn fx:id="cl_Region" prefWidth="116.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold;" text="Région" />
+            <TableColumn fx:id="cl_Hdebut" prefWidth="116.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold;" text="HeureDebut" />
+            <TableColumn fx:id="cl_Hfin" prefWidth="116.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold;" text="HeureFin" />
+            <TableColumn fx:id="cl_Min" prefWidth="116.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold;" text="Minutes" />
+            <TableColumn fx:id="cl_NumTel" prefWidth="116.0" style="-fx-background-color: #04B0E5; -fx-font-size: 18; -fx-font-style: italic bold;" text="NumTel" />
+         </columns>
+      </TableView>
+      <Button fx:id="btn_Rechercher" layoutX="679.0" layoutY="400.0" mnemonicParsing="false" onAction="#RechercherSalleDeSport" style="-fx-background-color: #04B0E5;" text="Rechercher" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfChercher" layoutX="80.0" layoutY="408.0" prefHeight="31.0" prefWidth="559.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btn_Trier" layoutX="837.0" layoutY="400.0" mnemonicParsing="false" onAction="#TrierListeSalleDeSport" style="-fx-background-color: #04B0E5;" text="Trier liste" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Text fill="#1eb2e3" layoutX="376.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion salle de sport" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_AfficherInfo" layoutX="191.0" layoutY="300.0" mnemonicParsing="false" onAction="#AfficherInfo" style="-fx-background-color: #04B0E5;" text="Afficher info" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
