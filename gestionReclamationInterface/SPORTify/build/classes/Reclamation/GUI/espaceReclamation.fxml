@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="476.0" prefWidth="716.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <ImageView fitHeight="524.0" fitWidth="716.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../salleDeSport.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="114.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../logo2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="147.0" layoutY="49.0" prefHeight="17.0" prefWidth="445.0" text="Bienvenue dans votre espace reclamation">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="147.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="154.0" text="Envoyer reclamation">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="408.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="154.0" text="Consulter reclmation">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
