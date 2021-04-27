@@ -84,20 +84,6 @@
 
 <section id="team" class="section gray-bg">
     <div class="container">
-        <script>
-            $(".recherche").on("submit", function(event) {
-                // prevent page reload
-                event.preventDefault();
-
-                $.ajax({
-                    url: '{{ path('course') }}',
-                    type: 'POST',
-                    success: function() {
-                        // perform dom update to show search results
-                    }
-                });
-            });
-        </script>
 
         <form id="recherche" method="get" type="submit">
             <div style="text-align: center;">
