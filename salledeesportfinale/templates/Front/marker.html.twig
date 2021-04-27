@@ -1,0 +1,19 @@
+{% extends 'Salle.html.twig' %}
+
+{% block body %}
+
+    <tr>
+        <th>Region</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>actions</th>
+    </tr>
+    <ul>
+        {% for zone in zone %}
+            <li>{{ post.region }}</li>
+            <li>{{ post.lat }}</li>
+            <li>{{ post.lng }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
