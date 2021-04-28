@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Categories;
 use App\Entity\Cours;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,17 +38,24 @@ class HomeController extends AbstractController
         if ($var!="")
         {
             $cours = $this->getDoctrine()->getRepository(cours::class)->findBy(array('typeCours' => $var));
+            $categories = $this->getDoctrine()
+                ->getRepository(Categories::class)
+                ->findAll();
         }
         else
         {
             $cours = $this->getDoctrine()
                 ->getRepository(Cours::class)
                 ->findAll();
+            $categories = $this->getDoctrine()
+                ->getRepository(Categories::class)
+                ->findAll();
         }
 
 
         return $this->render('Front/cours.html.twig', [
             'cours' => $cours,
+            'categories' => $categories,
         ]);
     }
 

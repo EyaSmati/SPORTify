@@ -53,7 +53,7 @@ class Cours
      * @Assert\Range(
      *      min = 0,
      *      max = 240,
-     *      notInRangeMessage = "It must be between {{ min }} min and {{ max }} min",
+     *      notInRangeMessage = "It must be between {{ min }}min and {{ max }}min",
      * )
      */
     private $duree;
@@ -66,7 +66,7 @@ class Cours
      * @Assert\Range(
      *      min = 0,
      *      max = 30,
-     *      notInRangeMessage = "It must be between {{ min }} h and {{ max }} h",
+     *      notInRangeMessage = "It must be between {{ min }}h and {{ max }}h",
      * )
 
      */

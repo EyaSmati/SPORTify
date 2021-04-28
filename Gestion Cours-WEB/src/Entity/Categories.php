@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="categories", uniqueConstraints={@ORM\UniqueConstraint(name="Id", columns={"Id"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\CategoriesRepository")
  */
 class Categories
 {
@@ -37,6 +38,29 @@ class Categories
      *@Assert\NotBlank(message="Description is required")
      */
     private $description;
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="image", type="string", length=2000, nullable=true, options={"default"="NULL"})
+     */
+    private $image = 'NULL';
+
+    /**
+     * @return string|null
+     */
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string|null $image
+     */
+    public function setImage(?string $image): void
+    {
+        $this->image = $image;
+    }
+
 
     /**
      * @return int

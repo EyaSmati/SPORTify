@@ -23,13 +23,9 @@ class CoursController extends AbstractController
         if ($var!="")
         {
 
-            $query =$this->getDoctrine()->getRepository(cours::class)->createQueryBuilder('u');
-            $query->where('u.idCours LIKE :title')
-                ->setParameter("title","%$var%")
-                ->getQuery();
+            $cours=$this->getDoctrine()->getRepository(cours::class)->findByIDField($var);
 
 
-            $cours = $query->getQuery()->getResult();
 
         }
         else
@@ -47,7 +43,7 @@ class CoursController extends AbstractController
     /**
      * @Route("/recherche", name="recherche", methods={"POST", "GET"})
      */
-    public function recherche(Request $request):response
+    public function find (Request $request):response
     {
         $id = $request->request->get('request');
         if ($id!="")

@@ -21,13 +21,7 @@ class CategoriesController extends AbstractController
         $var=$request->query->get('users');
         if ($var!="")
         {
-            $query =$this->getDoctrine()->getRepository(cours::categories)->createQueryBuilder('u');
-            $query->where('u.type LIKE :title')
-                ->setParameter("title","%$var%")
-                ->getQuery();
-
-
-            $categories = $query->getQuery()->getResult();
+            $categories =$this->getDoctrine()->getRepository(Categories::class)->findByTypeField($var);
         }
         else
         {
@@ -51,6 +45,23 @@ class CategoriesController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('image')->getData();
+
+
+            if ($image)
+            {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $originalFilename;
+                $fileName = $safeFilename.'.'.$image->guessExtension();
+                try{
+                    $image->move(
+                        $this->getParameter('imageuser_directory'),$fileName);
+                } catch (FileException $e)
+                {
+                }
+                $category->setImage($fileName);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();

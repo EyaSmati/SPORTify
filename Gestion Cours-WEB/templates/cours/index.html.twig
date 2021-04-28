@@ -56,7 +56,7 @@
                 <td>{{ cour.placeDisponible }}</td>
                 <td>{{ cour.mailcoach }}</td>
                 <td>{{ cour.nomsalledesport }}</td>
-                {%  set qrcode = "ID :" ~ cour.idCours ~"\n"~ "Type :"~cour.typeCours ~"\n"~"Mail Coach :" ~ cour.mailcoach~"\n"~"Nom Salle :" ~ cour.nomsalledesport~"\n"~"Place Disponible:" ~ cour.placeDisponible|trans~"\n"~"Heure:" ~ cour.heure|trans ~"\n"~"Duree:" ~ cour.duree|trans~"\n"~"Date:" ~ cour.date|date('Y-m-d') %}
+                {%  set qrcode = "ID :" ~ cour.idCours ~"\n"~ "Type :"~cour.typeCours ~"\n"~"Mail Coach :" ~ cour.mailcoach~"\n"~"Nom Salle :" ~ cour.nomsalledesport~"\n"~"Place Disponible:" ~ cour.placeDisponible|trans~"\n"~"Heure(H):" ~ cour.heure|trans ~"\n"~"Duree(MIN):" ~ cour.duree|trans~"\n"~"Date:" ~ cour.date|date('Y-m-d') %}
                 <td><img src="{{ qr_code_url(qrcode) }}" width="100"
                      height="100" /></td>
                 <td>
@@ -80,5 +80,5 @@
         </tbody>
     </table>
 
-                <a class="btn btn-primary" href="{{ path('cours_new') }}">Create New</a>
+                <a class="btn btn-primary" href="{{ path('cours_new') }}">Create new</a>
 {% endblock %}
