@@ -15,8 +15,8 @@ class CoursRepository extends \Doctrine\ORM\EntityRepository
 
     public function findByIDField($var)
     {
-        return $this->createQueryBuilder('u')
-            ->where('u.idCours LIKE :title')
+        return $this->createQueryBuilder('a')
+            ->where('a.idCours LIKE :title')
             ->setParameter("title","%$var%")
             ->getQuery()
             ->getResult();
