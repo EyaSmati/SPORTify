@@ -39,6 +39,7 @@ import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;
 import com.codename1.ui.geom.Dimension;
 import com.codename1.ui.layouts.FlowLayout;
+import com.codename1.ui.layouts.FlowLayout;
 
 
 /**
